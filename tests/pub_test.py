@@ -1,10 +1,14 @@
 import unittest
 from src.pub import Pub
+from src.drinks import Drinks
 
 class TestPub(unittest.TestCase):
     
     def setUp(self):
-        self.pub = Pub("Basic Bar", 1000.00, ["pint", "shot", "can"])
+        self.drink1 = Drinks("Lager", 5)
+        self.drink2 = Drinks("Shot", 5)
+        self.drinklist = [self.drink1, self.drink2]
+        self.pub = Pub("Basic Bar", 1000.00, self.drinklist)
 
     def test_pub_has_name(self):
         self.assertEqual("Basic Bar", self.pub.name)
@@ -13,8 +17,8 @@ class TestPub(unittest.TestCase):
         self.assertEqual(1000, self.pub.till)
 
     def test_pub_has_drinks(self):
-        self.assertEqual(["pint", "shot", "can"], self.pub.drinks)
-    
+        self.assertEqual(2, len(self.pub.drinks))
+ 
  
     # def test_increase_till(self):
     #     self.pub.increase_till(2.50)
