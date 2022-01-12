@@ -6,9 +6,9 @@ from src.customer import Customer
 class TestPub(unittest.TestCase):
     
     def setUp(self):
-        self.customer = Customer("Fernando", 20, 27)
-        self.drink1 = Drinks("Lager", 5)
-        self.drink2 = Drinks("Shot", 6)
+        self.customer = Customer("Fernando", 20, 27, 10)
+        self.drink1 = Drinks("Lager", 5, 3)
+        self.drink2 = Drinks("Shot", 6, 7)
         self.drinklist = [self.drink1, self.drink2]
         self.pub = Pub("Basic Bar", 1000.00, self.drinklist)
 
@@ -31,6 +31,4 @@ class TestPub(unittest.TestCase):
         self.assertEqual(True, result)
 
  
-    # def test_increase_till(self):
-    #     self.pub.increase_till(2.50)
-    #     self.assertEqual(102.50, self.pub.till)
+    
