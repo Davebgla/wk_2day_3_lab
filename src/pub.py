@@ -6,3 +6,9 @@ class Pub:
 
     def increase_till(self, amount):
         self.till += amount
+
+    def breathalise_customer(self, alcohol_intake):
+        if alcohol_intake >= 16:
+            return "OUT!"
+        else:
+            return "One more!"

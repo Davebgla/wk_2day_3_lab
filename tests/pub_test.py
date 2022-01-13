@@ -30,5 +30,7 @@ class TestPub(unittest.TestCase):
         result = self.customer.check_age(20)
         self.assertEqual(True, result)
 
- 
+    def test_breathalise_customer(self):
+        result = self.pub.breathalise_customer(16)
+        self.assertEqual("OUT!", result)
     
